@@ -1,0 +1,16 @@
+
+<ul>
+<% Object.keys(folders).forEach((f) => { %> <% if (f === ".") { %> <%
+folders[f].forEach((o) => { %>
+<ul>
+<%= o.Key %>
+
+</ul>
+<% }) %> <% } else { %>
+<li>
+  <a
+    href="/bucket/<%= bucketName %>/<%= encodeURIComponent(addToUrl + f) %>"><%= f %></a>
+
+</li>
+<% } %> <% }) %>
+</ul>

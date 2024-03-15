@@ -1,0 +1,9 @@
+
+include: 
+  - project: 'tamph4/tempate-cicd-docker-compose'
+    ref: main
+    file: '.gitlab-ci.yml'
+
+variables:
+  HOST_IP: ubuntu@172.18.3.19
+  WORK_DIR: /data/freshdesk/autocall-s3/

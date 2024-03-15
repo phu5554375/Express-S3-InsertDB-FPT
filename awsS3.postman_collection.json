@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "73dcd782-90b8-4372-9692-7c2ecfae7781",
+		"name": "awsS3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6806441",
+		"_collection_link": "https://www.postman.com/wecommit/workspace/phule/collection/6806441-73dcd782-90b8-4372-9692-7c2ecfae7781?action=share&source=collection_link&creator=6806441"
+	},
+	"item": [
+		{
+			"name": "filtercallid to csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "limit",
+						"value": "10",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3016/findById/24685",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3016",
+					"path": [
+						"findById",
+						"24685"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkauth",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "limit",
+						"value": "10",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3017/checkauth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3017",
+					"path": [
+						"checkauth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "s3file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "limit",
+						"value": "10",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3018/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3018",
+					"path": [
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insercsv",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"type": "file",
+							"src": "/C:/Users/phu55/Downloads/test1.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3016/cdr/csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3016",
+					"path": [
+						"cdr",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"phu@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3017/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3017",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "singup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"phule\",\r\n    \"email\": \"phule@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3016/user/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3016",
+					"path": [
+						"user",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
